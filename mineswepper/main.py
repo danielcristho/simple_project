@@ -1,4 +1,5 @@
 from tkinter import *
+from cell import Cell
 import settings
 import utils
 
@@ -32,7 +33,17 @@ __body__ = Frame(
 )
 __body__.place(
     x=utils.__width__(25),
-    y=utils.__height__(25)
+    y=utils.__height__(25),
 )
+
+#create nested loop
+for x in range(settings.GRID_SIZE):
+    for y in range(settings.GRID_SIZE):
+        c = Cell()
+        c.create_btn_object(__body__)
+        c.cell_btn_object.grid(
+            column=x, row=y
+        )
+
 
 root.mainloop()
