@@ -1,5 +1,6 @@
 FROM python:3.8
-# set environment variables
+
+# set environment
 ENV PYTHONUNBUFFERED 1
 RUN mkdir /code
 WORKDIR /code
